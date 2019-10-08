@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  security:
+    allowCorsOrigin: "*"
+  datasource:
+    url: jdbc:mysql://47.106.248.229:3306/provider?useUnicode=yes&characterEncoding=UTF-8&allowMultiQueries=true
+    username: jgm
+    password: 0000
+    type: org.apache.tomcat.jdbc.pool.DataSource
+    tomcat:
+      maxActive: 100
+      maxIdle: 20
+      minIdle: 10
+      initialSize: 10
+      testOnBorrow: false
+      testOnReturn: false
+      testWhileIdle: true
+      removeAbandoned: true
+      logAbandoned: true
+      validationQuery: SELECT 1
+      maxWait: 10000
+      timeBetweenEvictionRunsMillis: 30000
+      validationInterval: 30000
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.beiming.jus.web.domain
+  mapper-locations: classpath:com/beiming/jus/dao/mapper/*.xml
+mapper:
+  enumAsSimpleType: true
