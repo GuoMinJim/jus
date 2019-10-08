@@ -1,13 +1,13 @@
 package com.beiming.juc.atomic;
 
-import org.junit.Test;
+public class TestIncrement {
 
-public class testIncrement {
+  static Integer value = 0;
 
-  static Integer value2 = 0;
+  volatile int a = 0;
 
   public static void main(String[] args) throws InterruptedException {
-    new testIncrement().testaa();
+    new TestIncrement().testaa();
   }
 
 
@@ -17,9 +17,9 @@ public class testIncrement {
     for (int i = 0; i < threadSize; i++) {
       ts[i] = new Thread() {
         public void run() {
-            for (int j = 0; j < 10000; j++) {
+          for (int j = 0; j < 100000; j++) {
               synchronized (this) {
-                value2++;
+                value++;
               }
           }
         }
@@ -32,7 +32,7 @@ public class testIncrement {
     for (Thread t : ts) {
       t.join();
     }
-    System.out.println(value2);
+    System.out.println(value);
   }
 
 
