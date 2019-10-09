@@ -1,13 +1,11 @@
 package com.beiming.juc.atomic;
 
-import org.junit.Test;
-
-public class testIncrement {
+public class TestIncrement {
 
   static Integer value2 = 0;
 
   public static void main(String[] args) throws InterruptedException {
-    new testIncrement().testaa();
+    new TestIncrement().testaa();
   }
 
 
@@ -18,13 +16,10 @@ public class testIncrement {
       ts[i] = new Thread() {
         public void run() {
             for (int j = 0; j < 10000; j++) {
-              synchronized (this) {
-                value2++;
-              }
+              value2++;
           }
         }
       };
-      //
     }
     for (Thread t : ts) {
       t.start();
