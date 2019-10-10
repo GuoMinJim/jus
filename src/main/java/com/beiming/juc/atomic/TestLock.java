@@ -27,14 +27,31 @@ public class TestLock {
       });
     }
 
+    threads[5] = new Thread(() -> {
+      System.out.println(Thread.currentThread().getName() + "线程开始运行-------------");
+      lock.lock();
+      try {
+        condition1.await();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+      lock.unlock();
+      System.out.println(Thread.currentThread().getName() + "线程已经唤醒------------");
+    });
+
     for (Thread thread : threads) {
       thread.start();
     }
     Thread.sleep(2000);
     System.out.println("开始释放锁");
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 9; i++) {
+      lock.lock();
       condition.signal();
+      lock.unlock();
     }
 
+    lock.lock();
+    condition1.signal();
+    lock.unlock();
   }
 }
