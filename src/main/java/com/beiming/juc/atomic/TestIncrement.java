@@ -2,13 +2,14 @@ package com.beiming.juc.atomic;
 
 public class TestIncrement {
 
-  static Integer value2 = 0;
+
 
   public static void main(String[] args) throws InterruptedException {
     new TestIncrement().testaa();
   }
 
 
+  static Integer value2 = 0;
   public void testaa() throws InterruptedException {
     int threadSize = 10;
     Thread[] ts = new Thread[threadSize];
@@ -29,6 +30,4 @@ public class TestIncrement {
     }
     System.out.println(value2);
   }
-
-
 }
