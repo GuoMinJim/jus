@@ -29,9 +29,9 @@ public class MailServiceTest {
     SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
     // 设置收件人，寄件人
     simpleMailMessage.setTo("1850440367@qq.com");
-    simpleMailMessage.setFrom("13219811544@163.com");
-    simpleMailMessage.setSubject("Spring Boot Mail 邮件测试【文本】");
-    simpleMailMessage.setText("这里是一段简单文本。");
+    simpleMailMessage.setFrom("sznsgzc@163.com");
+    simpleMailMessage.setSubject("还记得我吗？今天是1024哦");
+    simpleMailMessage.setText("你好，这是我给你的留言");
     // 发送邮件
     mailSender.send(simpleMailMessage);
   }
