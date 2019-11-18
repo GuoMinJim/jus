@@ -15,10 +15,21 @@ import javax.net.ssl.TrustManager;
 public class TestHttps {
 
   public static void main(String[] args) {
+    // 获取opid
+//    String s = TestHttps.httpsRequest(
+//        "https://api.weixin.qq.com/sns/jscode2session?appid=wx39a7ef9befdf222d&secret=3774a5e28113de2637f85d83601a904e&js_code=061qwGC21SMNOQ1gj3C21Np0D21qwGCx&grant_type=authorization_code",
+//        "GET", null);
+//    System.out.println(s);
+    //获取access_token
+//    String s = TestHttps.httpsRequest(
+//        "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx39a7ef9befdf222d&secret=3774a5e28113de2637f85d83601a904e",
+//        "GET", null);
+//    System.out.println(s);
 
-    TestHttps.httpsRequest(
-        "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=APPID&secret=APPSECRET",
+    String s = TestHttps.httpsRequest(
+        "https://api.weixin.qq.com/cgi-bin/user/info?access_token=27_-ktdZtWbf-X42jbwZq-D_hyBYrTk34fxEPiimhNRYw8qWC6jF4wOMsaqVlNoUmfHszbWL9DkfkVbffOVgazu_MInUfQKKta_dJ1cek1GdYQevnjLSFG0CBSlzu4WHTeAFAEPB&openid=odvO15BClQ50hFjl05dFmSjWww-8&lang=zh_CN",
         "GET", null);
+    System.out.println(s);
 
 //    String s= TestHttps.httpsRequest("https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=o2***kZ43f4uUkMuLY-6iB7iXvNS_w&lang=zh_CN","GET",null);
 //    System.out.println(s);
