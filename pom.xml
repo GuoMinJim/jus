@@ -75,6 +75,18 @@
       <version>1.5</version>
     </dependency>
 
+    <!--netty-->
+    <dependency>
+      <artifactId>netty-all</artifactId>
+      <groupId>io.netty</groupId>
+      <version>4.1.22.Final</version>
+    </dependency>
+    <!--Guava-->
+    <dependency>
+      <artifactId>guava</artifactId>
+      <groupId>com.google.guava</groupId>
+      <version>21.0</version>
+    </dependency>
   </dependencies>
 
   <build>
