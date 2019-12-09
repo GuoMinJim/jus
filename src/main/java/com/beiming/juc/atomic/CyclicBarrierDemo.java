@@ -6,55 +6,55 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- *
+ * 它允许一组线程互相等待，直到到达某个公共屏障点 (common barrier point)。所谓屏障点就是一组任务执行完毕的时刻。
  */
 public class CyclicBarrierDemo {
 
-  final CyclicBarrier barrier;
-
-  final int MAX_TASK;
-
-  public CyclicBarrierDemo(int cnt) {
-    barrier = new CyclicBarrier(cnt + 1);
-    MAX_TASK = cnt;
-  }
-
-  public void doWork(final Runnable work) {
-    new Thread() {
-
-      public void run() {
-        work.run();
-        try {
-          int index = barrier.await();
-          doWithIndex(index);
-        } catch (InterruptedException e) {
-          return;
-        } catch (BrokenBarrierException e) {
-          return;
-        }
-      }
-    }.start();
-  }
-
-  private void doWithIndex(int index) {
-    if (index == MAX_TASK / 3) {
-      System.out.println("Left 30%.");
-    } else if (index == MAX_TASK / 2) {
-      System.out.println("Left 50%");
-    } else if (index == 0) {
-      System.out.println("run over");
-    }
-  }
-
-  public void waitForNext() {
-    try {
-      doWithIndex(barrier.await());
-    } catch (InterruptedException e) {
-      return;
-    } catch (BrokenBarrierException e) {
-      return;
-    }
-  }
+//  final CyclicBarrier barrier;
+//
+//  final int MAX_TAS;
+//
+//  public CyclicBarrierDemo(int cnt) {
+//    barrier = new CyclicBarrier(cnt + 1);
+//    MAX_TAS = cnt;
+//  }
+//
+//  public void doWork(final Runnable work) {
+//    new Thread() {
+//
+//      public void run() {
+//        work.run();
+//        try {
+//          int index = barrier.await();
+//          doWithIndex(index);
+//        } catch (InterruptedException e) {
+//          return;
+//        } catch (BrokenBarrierException e) {
+//          return;
+//        }
+//      }
+//    }.start();
+//  }
+//
+//  private void doWithIndex(int index) {
+//    if (index == MAX_TAS / 3) {
+//      System.out.println("Left 30%.");
+//    } else if (index == MAX_TAS / 2) {
+//      System.out.println("Left 50%");
+//    } else if (index == 0) {
+//      System.out.println("run over");
+//    }
+//  }
+//
+//  public void waitForNext() {
+//    try {
+//      doWithIndex(barrier.await());
+//    } catch (InterruptedException e) {
+//      return;
+//    } catch (BrokenBarrierException e) {
+//      return;
+//    }
+//  }
 
   public static void main(String[] args) throws InterruptedException {
 
@@ -77,12 +77,12 @@ public class CyclicBarrierDemo {
 //      }
 //    }
 
-        Random random = new Random();
+    Random random = new Random();
     int max = 10;
     CyclicBarrier cyclicBarrier = new CyclicBarrier(5);
     Thread[] threads = new Thread[max];
     for (int i = 0; i < max; i++) {
-      threads[i] = new Thread(){
+      threads[i] = new Thread() {
         @Override
         public void run() {
           Car car = new Car(String.valueOf(random.nextInt(1000)));
@@ -101,7 +101,7 @@ public class CyclicBarrierDemo {
 
     for (int i = 0; i < max; i++) {
       threads[i].start();
-      if ((i+1) % 5 == 0 && i !=0 && i!=max-1) {
+      if ((i + 1) % 5 == 0 && i != 0 && i != max - 1) {
         cyclicBarrier.reset();
         Thread.sleep(1000);
       }

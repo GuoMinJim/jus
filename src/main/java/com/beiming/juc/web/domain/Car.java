@@ -1,71 +1,74 @@
 package com.beiming.juc.web.domain;
 
-import javax.persistence.*;
-
 public class Car {
-    private Integer id;
 
-    private String name;
+  private Integer id;
 
-    private String brand;
+  private String name;
 
+  private String brand;
 
+  public Car(Integer id, String name, String brand) {
+    this.id = id;
+    this.name = name;
+    this.brand = brand;
+  }
 
-    public void ready() {
-        System.out.println(this.getName() + "已经ready");
-    }
+  public Car(Integer id) {
+    this.id = id;
+  }
 
-    public void run() {
-        System.out.println(this.getName() + "开始比赛");
-    }
+  public Car(String name) {
+    this.name = name;
+  }
 
-    public Car(Integer id) {
-        this.id = id;
-    }
+  public void ready() {
+    System.out.println(this.getName() + "已经ready");
+  }
 
-    public Car(String name) {
-        this.name = name;
-    }
+  public void run() {
+    System.out.println(this.getName() + "开始比赛");
+  }
 
-    /**
-     * @return id
-     */
-    public Integer getId() {
-        return id;
-    }
+  /**
+   * @return id
+   */
+  public Integer getId() {
+    return id;
+  }
 
-    /**
-     * @param id
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
+  /**
+   *
+   */
+  public void setId(Integer id) {
+    this.id = id;
+  }
 
-    /**
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
+  /**
+   * @return name
+   */
+  public String getName() {
+    return name;
+  }
 
-    /**
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
+  /**
+   *
+   */
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    /**
-     * @return brand
-     */
-    public String getBrand() {
-        return brand;
-    }
+  /**
+   * @return brand
+   */
+  public String getBrand() {
+    return brand;
+  }
 
-    /**
-     * @param brand
-     */
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+  /**
+   *
+   */
+  public void setBrand(String brand) {
+    this.brand = brand;
+  }
 }
