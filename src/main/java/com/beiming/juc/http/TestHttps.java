@@ -26,13 +26,20 @@ public class TestHttps {
 //        "GET", null);
 //    System.out.println(s);
 
-    String s = TestHttps.httpsRequest(
-        "https://api.weixin.qq.com/cgi-bin/user/info?access_token=27_-ktdZtWbf-X42jbwZq-D_hyBYrTk34fxEPiimhNRYw8qWC6jF4wOMsaqVlNoUmfHszbWL9DkfkVbffOVgazu_MInUfQKKta_dJ1cek1GdYQevnjLSFG0CBSlzu4WHTeAFAEPB&openid=odvO15BClQ50hFjl05dFmSjWww-8&lang=zh_CN",
-        "GET", null);
-    System.out.println(s);
+//    String s = TestHttps.httpsRequest(
+//        "https://api.weixin.qq.com/cgi-bin/user/info?access_token=27_-ktdZtWbf-X42jbwZq-D_hyBYrTk34fxEPiimhNRYw8qWC6jF4wOMsaqVlNoUmfHszbWL9DkfkVbffOVgazu_MInUfQKKta_dJ1cek1GdYQevnjLSFG0CBSlzu4WHTeAFAEPB&openid=odvO15BClQ50hFjl05dFmSjWww-8&lang=zh_CN",
+//        "GET", null);
+//    System.out.println(s);
 
 //    String s= TestHttps.httpsRequest("https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&openid=o2***kZ43f4uUkMuLY-6iB7iXvNS_w&lang=zh_CN","GET",null);
 //    System.out.println(s);
+    String token = "bearer "
+        + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzb3VyY2Vfb2F1dGgiLCJyZXNvdXJjZV93b3JrIiwicmVzb3VyY2VfYnVzaW5lc3MiXSwiY3JlYXRlVGltZSI6MTU3NjU2NzYwNjQzMSwidXNlcl9uYW1lIjoi5YW05bqG5YWs5a6J6LC35a6B5bmzIiwiYXV0aG9yIjoid2giLCJzY29wZSI6WyJzY29wZV93c20iXSwicm9sZXMiOiLlhazlrokiLCJleHAiOjE1NzY2MTA4MDYsImF1dGhvcml0aWVzIjpbIuWFrOWuiSJdLCJqdGkiOiJkMGFiNWZjYS0wNmYyLTQyMzAtODhjNy02OGUwZDhlMGU1NTAiLCJjbGllbnRfaWQiOiJjbGllbnRfYnVzaW5lc3MifQ.36Wi09bURgacbqZ4KGcatSzmvSfebfGOlcwi1ANGPkM";
+    String caseId = "116BCD804BC8CDACE053A50CC40AFD06";
+    String s = TestHttps.httpRequest(
+        "http://106.54.121.9:8086/case/info/ifDoByAjbsAndRybs?ajbs=116BCD804BC8CDACE053A50CC40AFD06&accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsicmVzb3VyY2Vfb2F1dGgiLCJyZXNvdXJjZV93b3JrIiwicmVzb3VyY2VfYnVzaW5lc3MiXSwiY3JlYXRlVGltZSI6MTU3NjYzMjExODA4OSwidXNlcl9uYW1lIjoi5YW05bqG5YWs5a6J6LC35a6B5bmzIiwiYXV0aG9yIjoid2giLCJzY29wZSI6WyJzY29wZV93c20iXSwicm9sZXMiOiLlhazlrokiLCJleHAiOjE1NzY2NzUzMTgsImF1dGhvcml0aWVzIjpbIuWFrOWuiSJdLCJqdGkiOiI0ZTlmMmU4Ny05YjY5LTRiYzQtODg4OS00YTViNmY3ZjM4NTQiLCJjbGllbnRfaWQiOiJjbGllbnRfYnVzaW5lc3MifQ.Gv_qk0QHHJDp3SOrCCMPgiA9tAIR80aAjGf-BaQlOEA",
+        "POST", null);
+    System.out.println(s);
   }
 
   public static String httpsRequest(String requestUrl, String requestMethod, String outputStr) {
