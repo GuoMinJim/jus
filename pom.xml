@@ -94,6 +94,67 @@
       <groupId>org.aspectj</groupId>
       <version>1.9.4</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus -->
+    <!--    <dependency>-->
+    <!--      <groupId>com.baomidou</groupId>-->
+    <!--      <artifactId>mybatis-plus</artifactId>-->
+    <!--      <version>3.2.0</version>-->
+    <!--    </dependency>-->
+
+    <dependency>
+      <artifactId>mybatis-plus-generator</artifactId>
+      <groupId>com.baomidou</groupId>
+      <version>3.3.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>velocity-engine-core</artifactId>
+      <groupId>org.apache.velocity</groupId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <artifactId>freemarker</artifactId>
+      <groupId>org.freemarker</groupId>
+      <version>2.3.29</version>
+    </dependency>
+    <dependency>
+      <artifactId>beetl</artifactId>
+      <groupId>com.ibeetl</groupId>
+      <version>3.0.16.RELEASE</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+    <dependency>
+      <artifactId>springfox-swagger2</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>swagger-models</artifactId>
+          <groupId>io.swagger</groupId>
+        </exclusion>
+      </exclusions>
+      <groupId>io.springfox</groupId>
+      <version>2.9.2</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/io.swagger/swagger-models -->
+    <dependency>
+      <artifactId>swagger-models</artifactId>
+      <groupId>io.swagger</groupId>
+      <version>1.5.21</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+    <dependency>
+      <artifactId>springfox-swagger-ui</artifactId>
+      <groupId>io.springfox</groupId>
+      <version>2.9.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <scope>provided</scope>
+      <version>1.18.8</version>
+    </dependency>
   </dependencies>
 
   <build>
