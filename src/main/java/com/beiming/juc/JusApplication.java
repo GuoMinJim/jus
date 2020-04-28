@@ -14,4 +14,10 @@ public class JusApplication {
     SpringApplication.run(JusApplication.class, args);
   }
 
+//
+//  @Bean
+//  @Profile({"dev","test"})// 设置 dev test 环境开启
+//  public PerformanceInterceptor performanceInterceptor() {
+//    return new PerformanceInterceptor();
+//  }
 }

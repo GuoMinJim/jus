@@ -155,6 +155,12 @@
       <scope>provided</scope>
       <version>1.18.8</version>
     </dependency>
+
+
+    <dependency>
+      <artifactId>p6spy</artifactId>
+      <groupId>p6spy</groupId>
+    </dependency>
   </dependencies>
 
   <build>

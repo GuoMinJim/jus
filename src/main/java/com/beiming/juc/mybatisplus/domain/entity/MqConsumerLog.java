@@ -3,7 +3,6 @@ package com.beiming.juc.mybatisplus.domain.entity;
 import com.beiming.juc.mybatisplus.config.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.Date;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -48,26 +47,6 @@ public class MqConsumerLog extends BaseEntity {
   @ApiModelProperty(value = "消息事务id")
   private String transactionId;
 
-  @ApiModelProperty(value = "状态")
-  private String status;
-
-  @ApiModelProperty(value = "备注")
-  private String remark;
-
-  @ApiModelProperty(value = "创建人")
-  private String createUser;
-
-  @ApiModelProperty(value = "创建时间")
-  private Date createTime;
-
-  @ApiModelProperty(value = "修改人")
-  private String updateUser;
-
-  @ApiModelProperty(value = "修改时间")
-  private Date updateTime;
-
-  @ApiModelProperty(value = "版本号")
-  private Integer version;
 
 
 }

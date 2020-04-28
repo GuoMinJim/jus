@@ -3,6 +3,7 @@ package com.beiming.juc.jianzhioffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Day1230 {
 
@@ -10,17 +11,35 @@ public class Day1230 {
   int num = 0;
 
   public static void main(String[] args) {
-    TreeNode root = new TreeNode(3);
-    root.left = new TreeNode(9);
-    root.right = new TreeNode(20);
-    root.right.left = new TreeNode(15);
-    root.right.right = new TreeNode(7);
-//    new Day1230().levelOrder(root);
-    System.out.println(new Day1230().levelOrder(root));
+//    TreeNode root = new TreeNode(3);
+//    root.left = new TreeNode(9);
+//    root.right = new TreeNode(20);
+//    root.right.left = new TreeNode(15);
+//    root.right.right = new TreeNode(7);
+////    new Day1230().levelOrder(root);
+//    System.out.println(new Day1230().levelOrder(root));
+//
+//    String[] strings = new String[]{"cats", "dog", "sand", "and", "cat"};
+//    Arrays.sort(strings);
+//    System.out.println(strings[0]);
+//    int num1 = 10;
+//    int num2 = 20;
+//
+//    swap(num1, num2);
+//
+//    System.out.println("num1 = " + num1);
+//    System.out.println("num2 = " + num2);
+    List<String> str = Arrays
+        .asList("USA", "Japan", "France", "Germany", "Italy", "U.K.", "Canada");
+    String collect1 = str.stream().map(String::toUpperCase).collect(Collectors.joining(","));
+    System.out.println(collect1);
 
-    String[] strings = new String[]{"cats", "dog", "sand", "and", "cat"};
-    Arrays.sort(strings);
-    System.out.println(strings[0]);
+  }
+
+  private static void swap(int num1, int num2) {
+    num1 = 100;
+
+    num2 = 1000;
   }
 
   public TreeNode convertBST(TreeNode root) {

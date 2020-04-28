@@ -22,6 +22,8 @@ spring:
       maxWait: 10000
       timeBetweenEvictionRunsMillis: 30000
       validationInterval: 30000
+#    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+#    url: jdbc:p6spy:h2:mem:test
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
